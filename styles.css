@@ -9,15 +9,18 @@ body {
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
     min-height: 100vh;
+    background: #1B263B; /* Deep navy blue for professional base */
+    color: #FFFFFF; /* White for high-contrast text */
+    transition: background 0.3s, color 0.3s;
 }
 
 .font-orbitron {
     font-family: 'Orbitron', sans-serif;
 }
 
-/* Neon Glow Effect */
+/* Professional Glow Effect */
 .neon-glow {
-    text-shadow: 0 0 5px rgba(59, 130, 246, 0.8), 0 0 10px rgba(59, 130, 246, 0.5);
+    text-shadow: 0 0 5px rgba(70, 130, 180, 0.6), 0 0 10px rgba(70, 130, 180, 0.3); /* Muted steel blue glow */
 }
 
 /* Animations */
@@ -28,7 +31,7 @@ body {
 
 @keyframes slideUp {
     from { transform: translateY(20px); opacity: 0; }
-    to { transform: trim translateY(0); opacity: 1; }
+    to { transform: translateY(0); opacity: 1; }
 }
 
 .animate-fade-in {
@@ -42,6 +45,8 @@ body {
 /* Header */
 header {
     transition: background 0.3s;
+    background: #1B263B; /* Match body for cohesive look */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 header .container {
@@ -52,33 +57,59 @@ header .container {
 
 nav a {
     font-size: 1.1rem;
+    color: #FFFFFF; /* White for nav links */
+}
+
+nav a:hover {
+    color: #4682B4; /* Steel blue on hover */
 }
 
 /* Mobile Menu */
 @media (max-width: 768px) {
     .menu-toggle {
         display: block;
+        color: #FFFFFF;
     }
     #nav-menu {
         display: none;
     }
     #nav-menu.active {
         display: flex;
+        background: #1B263B;
     }
+}
+
+/* Hero */
+.hero {
+    background: linear-gradient(to right, #1B263B, #4682B4); /* Navy to steel blue gradient */
+    color: #FFFFFF;
 }
 
 /* Posts */
 .post-summary {
+    background: #2C3E50; /* Slightly lighter navy for cards */
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .post-summary:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3) !important;
+    box-shadow: 0 10px 20px rgba(70, 130, 180, 0.4) !important; /* Steel blue shadow */
 }
 
 .post-grid article {
     animation-delay: calc(0.1s * var(--index));
+}
+
+.date {
+    color: #B0C4DE; /* Light steel blue for dates */
+}
+
+.read-more {
+    color: #D4A017; /* Gold for read more links */
+}
+
+.read-more:hover {
+    color: #FFD700; /* Brighter gold on hover */
 }
 
 /* Single Post */
@@ -86,6 +117,7 @@ nav a {
     font-family: 'Orbitron', sans-serif;
     font-size: 2.5rem;
     margin-bottom: 1rem;
+    color: #FFFFFF;
 }
 
 .post-image {
@@ -97,31 +129,68 @@ nav a {
 
 pre code {
     font-family: 'Source Code Pro', monospace;
-    background: #1e1e1e;
+    background: #2E2E2E; /* Charcoal for code blocks */
     padding: 1rem;
     border-radius: 8px;
-    color: #4da6ff;
+    color: #B0C4DE; /* Light steel blue for code */
     overflow-x: auto;
 }
 
 .back {
-    display: inline-block;
-    margin-top: 1.5rem;
-    color: #4da6ff;
+    color: #4682B4; /* Steel blue for back links */
+}
+
+/* About & Contact */
+#about, #contact {
+    background: #F5F7FA; /* Light gray for contrast */
+    color: #1B263B; /* Navy text for readability */
+}
+
+/* Form */
+form input, form textarea {
+    background: #FFFFFF;
+    border: 1px solid #4682B4; /* Steel blue border */
+    color: #1B263B;
+}
+
+form button {
+    background: #D4A017; /* Gold for submit button */
+    color: #FFFFFF;
+}
+
+form button:hover {
+    background: #FFD700; /* Brighter gold on hover */
+}
+
+/* Footer */
+footer {
+    background: #1B263B;
+    color: #B0C4DE; /* Light steel blue for footer text */
 }
 
 /* Dark Mode */
 body.dark {
-    background: linear-gradient(to bottom right, #1a1a1a, #2d3748);
+    background: #2E2E2E; /* Charcoal gray for dark mode */
+    color: #E6E6E6; /* Off-white text */
 }
 
 body.dark .hero {
-    background: linear-gradient(to right, #2d3748, #4a148c);
+    background: linear-gradient(to right, #2E2E2E, #4A5E7A); /* Darker gradient */
 }
 
-body.dark .post-summary,
+body.dark .post-summary {
+    background: #3C4858; /* Slightly lighter charcoal */
+}
+
 body.dark form input,
 body.dark form textarea {
-    background: #2d3748;
-    border-color: #4a5568;
+    background: #3C4858;
+    border-color: #6B7280;
+    color: #E6E6E6;
+}
+
+body.dark #about,
+body.dark #contact {
+    background: #3C4858; /* Darker gray for sections */
+    color: #E6E6E6;
 }
